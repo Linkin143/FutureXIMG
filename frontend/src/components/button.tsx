@@ -17,7 +17,7 @@ const Button = styled.div<{
   align-items: center;
   justify-content: center;
   gap: 6px;
-  height: min-content;
+  // height: min-content;
   padding: 10px 24px;
   @media (max-width: 600px) {
     padding: 8px 12px;
