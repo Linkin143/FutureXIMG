@@ -27,9 +27,8 @@ display : flex;
 flex-direction: column;
 align-items: center;
 @media (max-width:600px){
-font-size:22px
+font-size:22px;
 text-align : center;
-align-items: center;
 }
 `
 const Span = styled.div`
