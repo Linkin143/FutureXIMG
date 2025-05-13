@@ -14,7 +14,7 @@ export const GetPosts = async () => {
     }
 };
 
-export const CreatePosts = async (data) => {
+export const CreatePosts = async (data: Record<string, any>) => {
     try {
         const response = await API.post('/post/', data);
         return response.data;
@@ -24,7 +24,7 @@ export const CreatePosts = async (data) => {
     }
 };
 
-export const GenerateAIImage = async (data) => {
+export const GenerateAIImage = async (data: Record<string, any>) => {
     try {
         const response = await API.post('/generateImage/', data);
         return response.data;

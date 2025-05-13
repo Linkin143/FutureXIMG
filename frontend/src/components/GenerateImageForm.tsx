@@ -82,7 +82,7 @@ const GenerateImageForm: React.FC<GenerateImageFormProps> = ({
     }
     const createPostFunc = async () => {
         setCreatePostLoading(true);
-        await CreatePosts(post).then((response) => {
+        await CreatePosts(post).then(() => {
             setCreatePostLoading(false);
             navigate("/");
         }
@@ -103,15 +103,15 @@ const GenerateImageForm: React.FC<GenerateImageFormProps> = ({
             <Body>
                 <TextInput label="Author" placeholder="Write your name here" name="name"
                     value={post.name}
-                    handelChange={(e: React.ChangeEvent<HTMLInputElement>) => setPost({ ...post, name: e.target.value })} 
+                    handelChange={(e) => setPost({ ...post, name: e.target.value })} 
                 />
 
 
                 <TextInput label="Image Prompt" placeholder="Write a detailed prompt about the image you want to generate..."
-                    name="name" rows="8"
+                    name="name" rows={8}
                     textArea
                     value={post.prompt}
-                    handelChange={(e: React.ChangeEvent<HTMLInputElement>) => setPost({ ...post, prompt: e.target.value })} 
+                    handelChange={(e) => setPost({ ...post, prompt: e.target.value })} 
                     />
                 {error && <span style={{ color: "red", fontSize: "12px" }}>{error}</span>}
                 **Note: The more detailed the prompt, the better the image will be generated.**

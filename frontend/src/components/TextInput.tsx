@@ -42,7 +42,18 @@ const Input = styled.input`
   }
 `;
 
-const TextInput: React.FC = ({
+interface TextInputProps {
+  label: string;
+  placeholder?: string;
+  name: string;
+  value: string;
+  handelChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  textArea?: boolean;
+  rows?: number;
+  columns?: number;
+}
+
+const TextInput: React.FC<TextInputProps> = ({
   label,
   placeholder,
   name,
@@ -60,10 +71,10 @@ const TextInput: React.FC = ({
           as={textArea ? "textarea" : "input"}
           name={name}
           rows={rows}
-          columns={columns}
+          cols={columns}
           placeholder={placeholder}
           value={value}
-          onChange={(e) => handelChange(e)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => handelChange(e)}
         />
       </OutlinedInput>
     </Container>

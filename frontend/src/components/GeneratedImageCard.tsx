@@ -1,5 +1,5 @@
-import { CircularProgress } from '@mui/material'
-import styled from 'styled-components'
+import { CircularProgress } from '@mui/material';
+import styled from 'styled-components';
 
 const Container = styled.div`
 flex:1;
@@ -28,7 +28,12 @@ background: ${({ theme }) => theme.black + 50};
 
 `
 
-const GeneratedImageCard = ({src,loading}) => {
+interface GeneratedImageCardProps {
+    src?: string;
+    loading: boolean;
+}
+
+const GeneratedImageCard = ({ src, loading }: GeneratedImageCardProps) => {
     return (
         <Container>
             {

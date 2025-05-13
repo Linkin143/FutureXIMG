@@ -1,7 +1,12 @@
 import { CircularProgress } from "@mui/material";
 import styled from "styled-components";
 
-const Button = styled.div`
+const Button = styled.div<{
+  isDisabled?: boolean;
+  isLoading?: boolean;
+  flex?: boolean;
+  type?: "primary" | "secondary";
+}>`
   border-radius: 10px;
   color: white;
   font-size: 14px;
@@ -47,13 +52,24 @@ ${({ flex }) =>
 `}
 `;
 
-const button = ({
+interface ButtonProps {
+  text: string;
+  isLoading?: boolean;
+  isDisabled?: boolean;
+  rightIcon?: React.ReactNode;
+  leftIcon?: React.ReactNode;
+  type?: "primary" | "secondary";
+  onClick: () => void;
+  flex?: boolean;
+}
+
+const button: React.FC<ButtonProps> = ({
   text,
-  isLoading,
-  isDisabled,
+  isLoading = false,
+  isDisabled = false,
   rightIcon,
   leftIcon,
-  type,
+  type = "primary",
   onClick,
   flex,
 }) => {
