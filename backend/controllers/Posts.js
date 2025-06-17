@@ -36,8 +36,8 @@ export const createPost = async (req, res, next) => {
         const photoUrl = await cloudinary.uploader.upload(photo,
             {
                 //folder: "ai_posts",      // Optional: Cloudinary folder
-                width: 512,
-                height: 512,
+                width: 1024,
+                height: 1024,
                 crop: "fill",            // Ensures the image is cropped to fit exactly 512x512
                 gravity: "auto",         // Smart cropping based on content
             }
