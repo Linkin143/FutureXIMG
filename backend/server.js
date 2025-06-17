@@ -10,8 +10,8 @@ const app = express();
 app.use(cors());
 
 // Allow large base64 payloads (e.g., 10MB)
-app.use(express.json({ limit: "10mb" }));
-app.use(express.urlencoded({ limit: "10mb", extended: true }));
+app.use(express.json({ limit: "20mb" }));
+app.use(express.urlencoded({ limit: "20mb", extended: true }));
 
 const MONGODB_URL= process.env.MONGODB_URL;
 const PORT= process.env.PORT || 8080;
